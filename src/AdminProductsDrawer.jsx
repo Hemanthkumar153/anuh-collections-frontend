@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import preparedStock from './data/preparedStock.json'
 import './AdminProductsDrawer.css'
 
 const emptyProduct = {
@@ -51,6 +52,8 @@ function AdminProductsDrawer({ onClose, onProductsChanged }) {
   const [editingId, setEditingId] = useState(null)
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
+  const [importingStock, setImportingStock] = useState(false)
+  const [stockImportResult, setStockImportResult] = useState('')
   const [error, setError] = useState('')
   const [message, setMessage] = useState('')
 
@@ -242,6 +245,97 @@ function AdminProductsDrawer({ onClose, onProductsChanged }) {
     }
   }
 
+  async function importPreparedStock() {
+    setError('')
+    setMessage('')
+    setStockImportResult('')
+
+    const categoryIds = new Set(categories.map((category) => Number(category.id)))
+    const missingCategories = [...new Set(
+      preparedStock
+        .map((product) => product.categoryId)
+        .filter((categoryId) => !categoryIds.has(categoryId)),
+    )]
+
+    if (missingCategories.length > 0) {
+      setError(
+        'Your shop is missing one or more product categories. Refresh the page and check that Rings, Earrings, Tulip Chains, and Bracelets exist.',
+      )
+      return
+    }
+
+    const existingSkus = new Set(
+      products.map((product) => String(product.sku || '').toUpperCase()),
+    )
+    const productsToCreate = preparedStock.filter(
+      (product) => !existingSkus.has(product.sku.toUpperCase()),
+    )
+
+    if (productsToCreate.length === 0) {
+      setStockImportResult('All prepared products are already in the shop.')
+      return
+    }
+
+    const confirmed = window.confirm(
+      `Add ${productsToCreate.length} separate products to the shop now? Each listing starts with stock quantity 1. This will create active products in your shop database.`,
+    )
+
+    if (!confirmed) return
+
+    setImportingStock(true)
+    let added = 0
+    let failed = 0
+    const failures = []
+
+    for (let index = 0; index < productsToCreate.length; index += 1) {
+      const product = productsToCreate[index]
+      setStockImportResult(`Adding product ${index + 1} of ${productsToCreate.length}: ${product.name}`)
+
+      try {
+        const csrfHeader = await getCsrfHeader()
+        const response = await fetch('/api/v1/admin/products', {
+          method: 'POST',
+          credentials: 'include',
+          headers: {
+            'Content-Type': 'application/json',
+            ...csrfHeader,
+          },
+          body: JSON.stringify({
+            sku: product.sku,
+            name: product.name,
+            slug: product.slug,
+            description: product.description,
+            price: product.price,
+            stockQuantity: product.stockQuantity,
+            imageUrl: product.imageUrl,
+            categoryId: product.categoryId,
+          }),
+        })
+
+        const result = await readResponse(response)
+        if (!response.ok) {
+          throw new Error(
+            result.detail || result.message || `Server returned ${response.status}`,
+          )
+        }
+
+        added += 1
+      } catch (requestError) {
+        failed += 1
+        failures.push(`${product.name}: ${requestError.message || 'Could not add it.'}`)
+      }
+    }
+
+    await loadData()
+    onProductsChanged()
+    setImportingStock(false)
+
+    const summary = `Added ${added} products${failed ? `; ${failed} could not be added` : ''}.`
+    setStockImportResult(
+      failures.length ? `${summary} ${failures.slice(0, 3).join(' | ')}` : summary,
+    )
+  }
+
   return (
     <div className="admin-products-overlay" onMouseDown={onClose}>
       <aside
@@ -267,6 +361,35 @@ function AdminProductsDrawer({ onClose, onProductsChanged }) {
             ×
           </button>
         </header>
+
+        <section className="prepared-stock-section">
+          <div>
+            <p className="admin-products-eyebrow">YOUR PHOTOS, ONE LISTING PER DESIGN</p>
+            <h3>Prepared stock</h3>
+            <p className="prepared-stock-copy">
+              {preparedStock.length} separate listings are ready with their own photos and prices. One stock unit means one item, one pair of earrings, or one complete set as shown in its photo.
+            </p>
+            <p className="prepared-stock-counts">
+              20 necklaces and sets · 22 bracelets and bangles · 21 earring pairs
+            </p>
+          </div>
+          <button
+            className="admin-primary-button prepared-stock-button"
+            type="button"
+            onClick={importPreparedStock}
+            disabled={loading || importingStock || categories.length === 0}
+          >
+            {importingStock ? 'Adding prepared stock…' : 'Add prepared stock'}
+          </button>
+          {stockImportResult && (
+            <p className="admin-products-alert success" role="status">
+              {stockImportResult}
+            </p>
+          )}
+          <p className="prepared-stock-note">
+            The ring tray photos from earlier messages aren’t available in the project files, so those rings are not included in this batch.
+          </p>
+        </section>
 
         <section className="admin-product-form-section">
           <h3>{editingId ? 'Edit product' : 'Add a product'}</h3>

@@ -98,6 +98,53 @@
   color: #416b3e;
 }
 
+.prepared-stock-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px 22px;
+  padding: 24px 32px;
+  border-bottom: 1px solid #eee3da;
+  background: #f8f3ed;
+}
+
+.prepared-stock-section h3 {
+  margin: 0;
+  color: #382f2a;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.prepared-stock-copy,
+.prepared-stock-counts,
+.prepared-stock-note {
+  margin: 8px 0 0;
+  color: #81766f;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.prepared-stock-counts {
+  color: #a76e36;
+  font-weight: 600;
+}
+
+.prepared-stock-note,
+.prepared-stock-section .admin-products-alert {
+  grid-column: 1 / -1;
+  margin: 0;
+}
+
+.prepared-stock-button {
+  white-space: nowrap;
+}
+
+.prepared-stock-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
 .admin-product-form {
   display: grid;
   gap: 14px;
@@ -254,6 +301,7 @@
 
 @media (max-width: 560px) {
   .admin-products-header,
+  .prepared-stock-section,
   .admin-product-form-section,
   .admin-product-list-section {
     padding-right: 18px;
@@ -262,6 +310,16 @@
 
   .admin-product-form-row {
     grid-template-columns: 1fr;
+  }
+
+  .prepared-stock-section {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .prepared-stock-button {
+    width: 100%;
+    white-space: normal;
   }
 
   .admin-product-row {

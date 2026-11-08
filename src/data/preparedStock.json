@@ -1,0 +1,632 @@
+[
+  {
+    "sku": "AC-CHAIN-299-01",
+    "name": "Emerald Leaf Crystal Pendant Chain",
+    "slug": "emerald-leaf-crystal-pendant-chain",
+    "description": "Gold-tone chain with a small crystal drop and green leaf details.",
+    "price": 299,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-chain-299-01.jpeg",
+    "categoryId": 1
+  },
+  {
+    "sku": "AC-CHAIN-299-02",
+    "name": "Piano Flower Pendant Chain",
+    "slug": "piano-flower-pendant-chain",
+    "description": "Gold-tone chain with a delicate flower-inspired pendant.",
+    "price": 299,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-chain-299-02.jpeg",
+    "categoryId": 1
+  },
+  {
+    "sku": "AC-CHAIN-299-03",
+    "name": "Crystal Blossom Necklace",
+    "slug": "crystal-blossom-necklace",
+    "description": "Gold-tone chain with a floral crystal pendant.",
+    "price": 299,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-chain-299-03.jpeg",
+    "categoryId": 1
+  },
+  {
+    "sku": "AC-CHAIN-299-04",
+    "name": "Golden Flower Charm Chain",
+    "slug": "golden-flower-charm-chain",
+    "description": "Slim gold-tone chain finished with a flower charm.",
+    "price": 299,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-chain-299-04.jpeg",
+    "categoryId": 1
+  },
+  {
+    "sku": "AC-CHAIN-299-05",
+    "name": "Peach Square Pendant Necklace",
+    "slug": "peach-square-pendant-necklace",
+    "description": "Gold-tone chain with a peach-toned square pendant.",
+    "price": 299,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-chain-299-05.jpeg",
+    "categoryId": 1
+  },
+  {
+    "sku": "AC-CHAIN-299-06",
+    "name": "Midnight Square Pendant Necklace",
+    "slug": "midnight-square-pendant-necklace",
+    "description": "Gold-tone chain with a dark square pendant framed in gold-tone detail.",
+    "price": 299,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-chain-299-06.jpeg",
+    "categoryId": 1
+  },
+  {
+    "sku": "AC-CHAIN-299-07",
+    "name": "Crystal Bloom Pendant Chain",
+    "slug": "crystal-bloom-pendant-chain",
+    "description": "Gold-tone chain with a small sparkling floral pendant.",
+    "price": 299,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-chain-299-07.jpeg",
+    "categoryId": 1
+  },
+  {
+    "sku": "AC-SET-299-08",
+    "name": "Golden Heart Necklace & Earrings Set",
+    "slug": "golden-heart-necklace-earrings-set",
+    "description": "Complete matching set: one heart pendant necklace and the matching pair of earrings shown.",
+    "price": 299,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-set-299-08.jpeg",
+    "categoryId": 1
+  },
+  {
+    "sku": "AC-SET-389-01",
+    "name": "Pink Blossom Necklace & Stud Set",
+    "slug": "pink-blossom-necklace-stud-set",
+    "description": "Complete matching set: flower pendant necklace and matching stud earrings shown.",
+    "price": 389,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-set-389-01.jpeg",
+    "categoryId": 1
+  },
+  {
+    "sku": "AC-CHAIN-389-02",
+    "name": "Golden Heart Drop Necklace",
+    "slug": "golden-heart-drop-necklace",
+    "description": "Gold-tone necklace with a sculpted heart pendant.",
+    "price": 389,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-chain-389-02.jpeg",
+    "categoryId": 1
+  },
+  {
+    "sku": "AC-CHAIN-379-01",
+    "name": "Mother-of-Pearl Circle Necklace",
+    "slug": "mother-of-pearl-circle-necklace",
+    "description": "Gold-tone necklace with alternating round mother-of-pearl-look and open-circle links.",
+    "price": 379,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-chain-379-01.jpeg",
+    "categoryId": 1
+  },
+  {
+    "sku": "AC-CHAIN-379-02",
+    "name": "Pink Crystal Flower Pendant Chain",
+    "slug": "pink-crystal-flower-pendant-chain",
+    "description": "Gold-tone chain with a pink crystal flower pendant.",
+    "price": 379,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-chain-379-02.jpeg",
+    "categoryId": 1
+  },
+  {
+    "sku": "AC-CHAIN-379-03",
+    "name": "Double Bloom Drop Necklace",
+    "slug": "double-bloom-drop-necklace",
+    "description": "Gold-tone long necklace with two small floral drops.",
+    "price": 379,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-chain-379-03.jpeg",
+    "categoryId": 1
+  },
+  {
+    "sku": "AC-CHAIN-379-04",
+    "name": "Pearl Teardrop Pendant Necklace",
+    "slug": "pearl-teardrop-pendant-necklace",
+    "description": "Gold-tone necklace with a teardrop pendant and pearl accents.",
+    "price": 379,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-chain-379-04.jpeg",
+    "categoryId": 1
+  },
+  {
+    "sku": "AC-BRACELET-319-01",
+    "name": "Linked Hearts Gold-tone Bracelet",
+    "slug": "linked-hearts-gold-tone-bracelet",
+    "description": "Gold-tone bracelet with two interlocking open-heart charms.",
+    "price": 319,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-bracelet-319-01.jpeg",
+    "categoryId": 2
+  },
+  {
+    "sku": "AC-CHAIN-319-02",
+    "name": "Pink Rosebud Pendant Necklace",
+    "slug": "pink-rosebud-pendant-necklace",
+    "description": "Gold-tone chain with a pink rosebud and green leaf details.",
+    "price": 319,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-chain-319-02.jpeg",
+    "categoryId": 1
+  },
+  {
+    "sku": "AC-CHAIN-319-03",
+    "name": "Ruby Rosebud Pendant Necklace",
+    "slug": "ruby-rosebud-pendant-necklace",
+    "description": "Gold-tone chain with a red rosebud and green leaf details.",
+    "price": 319,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-chain-319-03.jpeg",
+    "categoryId": 1
+  },
+  {
+    "sku": "AC-BRACELET-259-01",
+    "name": "Infinity Crystal Link Bracelet",
+    "slug": "infinity-crystal-link-bracelet",
+    "description": "Gold-tone bracelet with an infinity-inspired crystal accent.",
+    "price": 259,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-bracelet-259-01.jpeg",
+    "categoryId": 2
+  },
+  {
+    "sku": "AC-CHAIN-259-02",
+    "name": "Crystal Wreath Pendant Necklace",
+    "slug": "crystal-wreath-pendant-necklace",
+    "description": "Gold-tone chain with a small crystal wreath-style pendant.",
+    "price": 259,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-chain-259-02.jpeg",
+    "categoryId": 1
+  },
+  {
+    "sku": "AC-CHAIN-369-01",
+    "name": "Crystal Teddy Pendant Necklace",
+    "slug": "crystal-teddy-pendant-necklace",
+    "description": "Gold-tone chain with a teddy-bear outline pendant edged in crystals.",
+    "price": 369,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-chain-369-01.jpeg",
+    "categoryId": 1
+  },
+  {
+    "sku": "AC-BRACELET-159-01",
+    "name": "Open Heart Gold-tone Bracelet",
+    "slug": "open-heart-gold-tone-bracelet",
+    "description": "Simple gold-tone bracelet with an open heart charm.",
+    "price": 159,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-bracelet-159-01.jpeg",
+    "categoryId": 2
+  },
+  {
+    "sku": "AC-CHAIN-199-01",
+    "name": "Open Heart Pendant Necklace",
+    "slug": "open-heart-pendant-necklace",
+    "description": "Gold-tone chain with an open heart pendant.",
+    "price": 199,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-chain-199-01.jpeg",
+    "categoryId": 1
+  },
+  {
+    "sku": "AC-BANGLE-199-01",
+    "name": "Textured Gold-tone Bangle Stack",
+    "slug": "textured-gold-tone-bangle-stack",
+    "description": "A complete stack of slim textured bangles, sold together as shown.",
+    "price": 199,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-bangle-199-01.jpeg",
+    "categoryId": 2
+  },
+  {
+    "sku": "AC-BRACELET-249-01",
+    "name": "Crystal Interlock Bracelet",
+    "slug": "crystal-interlock-bracelet",
+    "description": "Gold-tone bracelet with overlapping crystal-set geometric links.",
+    "price": 249,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-bracelet-249-01.jpeg",
+    "categoryId": 2
+  },
+  {
+    "sku": "AC-BRACELET-249-02",
+    "name": "Classic Black Dial Cuff Bracelet",
+    "slug": "classic-black-dial-cuff-bracelet",
+    "description": "Gold-tone cuff bracelet with a round black dial-style centre.",
+    "price": 249,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-bracelet-249-02.jpeg",
+    "categoryId": 2
+  },
+  {
+    "sku": "AC-BRACELET-249-03",
+    "name": "Black Heart Triple-band Bracelet",
+    "slug": "black-heart-triple-band-bracelet",
+    "description": "Gold-tone multi-band bracelet with a black heart centre.",
+    "price": 249,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-bracelet-249-03.jpeg",
+    "categoryId": 2
+  },
+  {
+    "sku": "AC-BRACELET-249-04",
+    "name": "Golden Butterfly Cuff Bracelet",
+    "slug": "golden-butterfly-cuff-bracelet",
+    "description": "Gold-tone cuff bracelet with textured butterfly accents.",
+    "price": 249,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-bracelet-249-04.jpeg",
+    "categoryId": 2
+  },
+  {
+    "sku": "AC-BRACELET-249-05",
+    "name": "Crystal Line Slim Bangle",
+    "slug": "crystal-line-slim-bangle",
+    "description": "Slim gold-tone bangle with a line of clear crystal accents.",
+    "price": 249,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-bracelet-249-05.jpeg",
+    "categoryId": 2
+  },
+  {
+    "sku": "AC-BRACELET-249-06",
+    "name": "Black Heart Open Cuff Bracelet",
+    "slug": "black-heart-open-cuff-bracelet",
+    "description": "Gold-tone open cuff with two contrasting heart details.",
+    "price": 249,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-bracelet-249-06.jpeg",
+    "categoryId": 2
+  },
+  {
+    "sku": "AC-BRACELET-249-07",
+    "name": "Two-tone Clover Bracelet",
+    "slug": "two-tone-clover-bracelet",
+    "description": "Gold-tone bracelet with a two-tone clover centre.",
+    "price": 249,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-bracelet-249-07.jpeg",
+    "categoryId": 2
+  },
+  {
+    "sku": "AC-BRACELET-249-08",
+    "name": "Butterfly & Clover Bracelet",
+    "slug": "butterfly-clover-bracelet",
+    "description": "Gold-tone bracelet decorated with butterfly and clover motifs.",
+    "price": 249,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-bracelet-249-08.jpeg",
+    "categoryId": 2
+  },
+  {
+    "sku": "AC-BRACELET-249-09",
+    "name": "Triple Butterfly Cuff Bracelet",
+    "slug": "triple-butterfly-cuff-bracelet",
+    "description": "Gold-tone cuff decorated with three textured butterflies.",
+    "price": 249,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-bracelet-249-09.jpeg",
+    "categoryId": 2
+  },
+  {
+    "sku": "AC-BRACELET-249-10",
+    "name": "Trio Flower Charm Bracelet",
+    "slug": "trio-flower-charm-bracelet",
+    "description": "Gold-tone bracelet with three flower charms and crystal details.",
+    "price": 249,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-bracelet-249-10.jpeg",
+    "categoryId": 2
+  },
+  {
+    "sku": "AC-BRACELET-249-11",
+    "name": "Crystal Bar Cuff Bracelet",
+    "slug": "crystal-bar-cuff-bracelet",
+    "description": "Gold-tone cuff with a slim crystal-set bar detail.",
+    "price": 249,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-bracelet-249-11.jpeg",
+    "categoryId": 2
+  },
+  {
+    "sku": "AC-BRACELET-249-12",
+    "name": "Butterfly Crystal Link Bracelet",
+    "slug": "butterfly-crystal-link-bracelet",
+    "description": "Gold-tone bracelet with a butterfly centre and small crystal accents.",
+    "price": 249,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-bracelet-249-12.jpeg",
+    "categoryId": 2
+  },
+  {
+    "sku": "AC-BRACELET-249-13",
+    "name": "Crystal Bar Double-line Bracelet",
+    "slug": "crystal-bar-double-line-bracelet",
+    "description": "Gold-tone bracelet with a double-line crystal-set centre.",
+    "price": 249,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-bracelet-249-13.jpeg",
+    "categoryId": 2
+  },
+  {
+    "sku": "AC-BRACELET-399-01",
+    "name": "Pink Rose Vine Bracelet",
+    "slug": "pink-rose-vine-bracelet",
+    "description": "Gold-tone bracelet with pink rose and green leaf details.",
+    "price": 399,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-bracelet-399-01.jpeg",
+    "categoryId": 2
+  },
+  {
+    "sku": "AC-BRACELET-399-02",
+    "name": "Pink Blossom Charm Bracelet",
+    "slug": "pink-blossom-charm-bracelet",
+    "description": "Gold-tone bracelet with a pink blossom charm.",
+    "price": 399,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-bracelet-399-02.jpeg",
+    "categoryId": 2
+  },
+  {
+    "sku": "AC-BRACELET-399-03",
+    "name": "Clear Leaf Accent Bracelet",
+    "slug": "clear-leaf-accent-bracelet",
+    "description": "Gold-tone bracelet with clear crystal leaf details.",
+    "price": 399,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-bracelet-399-03.jpeg",
+    "categoryId": 2
+  },
+  {
+    "sku": "AC-SET-399-04",
+    "name": "Golden Heart Jewellery Set",
+    "slug": "golden-heart-jewellery-set",
+    "description": "Complete set as shown: heart pendant necklace, matching earrings, and ring, sold together.",
+    "price": 399,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-set-399-04.jpeg",
+    "categoryId": 1
+  },
+  {
+    "sku": "AC-BRACELET-499-01",
+    "name": "Ruby & Emerald Vine Cuff",
+    "slug": "ruby-emerald-vine-cuff",
+    "description": "Gold-tone cuff with red crystal flowers and green leaf accents.",
+    "price": 499,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-bracelet-499-01.jpeg",
+    "categoryId": 2
+  },
+  {
+    "sku": "AC-BRACELET-499-02",
+    "name": "Rose Crystal Vine Cuff",
+    "slug": "rose-crystal-vine-cuff",
+    "description": "Gold-tone cuff with pale pink crystal flowers and green leaf accents.",
+    "price": 499,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-bracelet-499-02.jpeg",
+    "categoryId": 2
+  },
+  {
+    "sku": "AC-EARRING-050-01",
+    "name": "Crystal Drop Wave Earrings",
+    "slug": "crystal-drop-wave-earrings",
+    "description": "One pair of gold-tone earrings with a crystal stud and curved drop detail.",
+    "price": 50,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-earring-050-01.jpeg",
+    "categoryId": 3
+  },
+  {
+    "sku": "AC-EARRING-050-02",
+    "name": "White Bow Stud Earrings",
+    "slug": "white-bow-stud-earrings",
+    "description": "One pair of white bow-shaped stud earrings.",
+    "price": 50,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-earring-050-02.jpeg",
+    "categoryId": 3
+  },
+  {
+    "sku": "AC-EARRING-050-03",
+    "name": "Black Curl Crystal Drop Earrings",
+    "slug": "black-curl-crystal-drop-earrings",
+    "description": "One pair of dark scroll-detail earrings with clear crystal drops.",
+    "price": 50,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-earring-050-03.jpeg",
+    "categoryId": 3
+  },
+  {
+    "sku": "AC-EARRING-050-04",
+    "name": "Silver-tone Bow Knot Studs",
+    "slug": "silver-tone-bow-knot-studs",
+    "description": "One pair of polished silver-tone bow knot stud earrings.",
+    "price": 50,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-earring-050-04.jpeg",
+    "categoryId": 3
+  },
+  {
+    "sku": "AC-EARRING-050-05",
+    "name": "Pearl Wreath Crystal Hoops",
+    "slug": "pearl-wreath-crystal-hoops",
+    "description": "One pair of small gold-tone hoops with pearl and crystal details.",
+    "price": 50,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-earring-050-05.jpeg",
+    "categoryId": 3
+  },
+  {
+    "sku": "AC-EARRING-050-06",
+    "name": "Pearl Leaf Drop Earrings",
+    "slug": "pearl-leaf-drop-earrings",
+    "description": "One pair of silver-tone leaf earrings with pearl and crystal details.",
+    "price": 50,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-earring-050-06.jpeg",
+    "categoryId": 3
+  },
+  {
+    "sku": "AC-EARRING-050-07",
+    "name": "Traditional Temple Jhumka Earrings",
+    "slug": "traditional-temple-jhumka-earrings",
+    "description": "One pair of ornate gold-tone temple-style jhumka earrings.",
+    "price": 50,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-earring-050-07.jpeg",
+    "categoryId": 3
+  },
+  {
+    "sku": "AC-EARRING-060-01",
+    "name": "Crystal Swirl Stud Earrings",
+    "slug": "crystal-swirl-stud-earrings",
+    "description": "One pair of silver-tone swirl earrings with clear crystal drops.",
+    "price": 60,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-earring-060-01.jpeg",
+    "categoryId": 3
+  },
+  {
+    "sku": "AC-EARRING-060-02",
+    "name": "Crystal Frame Geometric Earrings",
+    "slug": "crystal-frame-geometric-earrings",
+    "description": "One pair of gold-tone geometric earrings with crystal accents.",
+    "price": 60,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-earring-060-02.jpeg",
+    "categoryId": 3
+  },
+  {
+    "sku": "AC-EARRING-060-03",
+    "name": "Pearl Leaf Silver-tone Hoops",
+    "slug": "pearl-leaf-silver-tone-hoops",
+    "description": "One pair of silver-tone curved earrings with leaf and pearl accents.",
+    "price": 60,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-earring-060-03.jpeg",
+    "categoryId": 3
+  },
+  {
+    "sku": "AC-EARRING-060-04",
+    "name": "White Petal Flower Studs",
+    "slug": "white-petal-flower-studs",
+    "description": "One pair of white petal flower stud earrings.",
+    "price": 60,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-earring-060-04.jpeg",
+    "categoryId": 3
+  },
+  {
+    "sku": "AC-EARRING-060-05",
+    "name": "Pearl Edge Gold-tone Climbers",
+    "slug": "pearl-edge-gold-tone-climbers",
+    "description": "One pair of slim gold-tone earrings lined with small pearls.",
+    "price": 60,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-earring-060-05.jpeg",
+    "categoryId": 3
+  },
+  {
+    "sku": "AC-EARRING-060-06",
+    "name": "Pearl Cat Stud Earrings",
+    "slug": "pearl-cat-stud-earrings",
+    "description": "One pair of playful silver-tone cat earrings with pearl accents.",
+    "price": 60,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-earring-060-06.jpeg",
+    "categoryId": 3
+  },
+  {
+    "sku": "AC-EARRING-060-07",
+    "name": "Pink Leaf Pearl Drop Earrings",
+    "slug": "pink-leaf-pearl-drop-earrings",
+    "description": "One pair of curved silver-tone earrings with pink leaf and pearl details.",
+    "price": 60,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-earring-060-07.jpeg",
+    "categoryId": 3
+  },
+  {
+    "sku": "AC-EARRING-060-08",
+    "name": "Triple-line Gold-tone Hoop Earrings",
+    "slug": "triple-line-gold-tone-hoop-earrings",
+    "description": "One pair of polished gold-tone triple-line hoop earrings.",
+    "price": 60,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-earring-060-08.jpeg",
+    "categoryId": 3
+  },
+  {
+    "sku": "AC-EARRING-060-09",
+    "name": "Pink Cherry Pearl Earrings",
+    "slug": "pink-cherry-pearl-earrings",
+    "description": "One pair of pink fruit-inspired earrings with pearl and green leaf details.",
+    "price": 60,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-earring-060-09.jpeg",
+    "categoryId": 3
+  },
+  {
+    "sku": "AC-EARRING-060-10",
+    "name": "Opal-look Square Stud Earrings",
+    "slug": "opal-look-square-stud-earrings",
+    "description": "One pair of square white inlay-look stud earrings with dark trim.",
+    "price": 60,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-earring-060-10.jpeg",
+    "categoryId": 3
+  },
+  {
+    "sku": "AC-EARRING-060-11",
+    "name": "Golden Triple Arc Hoops",
+    "slug": "golden-triple-arc-hoops",
+    "description": "One pair of multi-arc gold-tone hoop earrings.",
+    "price": 60,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-earring-060-11.jpeg",
+    "categoryId": 3
+  },
+  {
+    "sku": "AC-EARRING-060-12",
+    "name": "Crystal Stripe Multi-hoop Earrings",
+    "slug": "crystal-stripe-multi-hoop-earrings",
+    "description": "One pair of layered gold-tone hoop earrings with a crystal stripe.",
+    "price": 60,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-earring-060-12.jpeg",
+    "categoryId": 3
+  },
+  {
+    "sku": "AC-EARRING-060-13",
+    "name": "Pearl Crystal Bar Drop Earrings",
+    "slug": "pearl-crystal-bar-drop-earrings",
+    "description": "One pair of silver-tone bar earrings with crystal and pearl details.",
+    "price": 60,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-earring-060-13.jpeg",
+    "categoryId": 3
+  },
+  {
+    "sku": "AC-EARRING-060-14",
+    "name": "Textured Gold-tone Hoop Earrings",
+    "slug": "textured-gold-tone-hoop-earrings",
+    "description": "One pair of textured gold-tone hoop earrings.",
+    "price": 60,
+    "stockQuantity": 1,
+    "imageUrl": "/products/ac-earring-060-14.jpeg",
+    "categoryId": 3
+  }
+]
