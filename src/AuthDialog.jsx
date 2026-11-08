@@ -58,9 +58,22 @@ function AuthDialog({ onClose, onAuthenticated }) {
         body: JSON.stringify(body),
       })
 
-      const result = await response.json()
+      const responseText = await response.text()
+      let result = {}
+
+      try {
+        result = responseText ? JSON.parse(responseText) : {}
+      } catch {
+        result = {}
+      }
 
       if (!response.ok) {
+        if (isLogin && response.status === 401) {
+          throw new Error(
+            "Email or password is incorrect. If you haven't created an account yet, choose Create account first.",
+          )
+        }
+
         throw new Error(
           result.detail ||
             result.message ||

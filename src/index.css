@@ -1,6 +1,6 @@
 :root {
   font-family: "Segoe UI", Arial, sans-serif;
-  color: #342b27;
+  color: #49323d;
   background: #fff;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -20,6 +20,7 @@ html {
 body {
   min-width: 320px;
   margin: 0;
+  background: #fff;
 }
 
 button,
@@ -31,6 +32,6 @@ select {
 button:focus-visible,
 input:focus-visible,
 select:focus-visible {
-  outline: 2px solid #a97843;
+  outline: 2px solid #bd5279;
   outline-offset: 3px;
 }
