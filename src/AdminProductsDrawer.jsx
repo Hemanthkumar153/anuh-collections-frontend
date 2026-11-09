@@ -275,6 +275,9 @@ function AdminProductsDrawer({ onClose, onProductsChanged }) {
     const existingBySku = new Map(
       products.map((product) => [String(product.sku || '').toUpperCase(), product]),
     )
+    const existingBySlug = new Map(
+      products.map((product) => [String(product.slug || '').toLowerCase(), product]),
+    )
 
     const confirmed = window.confirm(
       `Sync ${productsWithCategories.length} ${batchLabel} to the shop? Existing listings with the same SKU will be updated with the prepared details and photo; missing listings will be added.`,
@@ -291,6 +294,7 @@ function AdminProductsDrawer({ onClose, onProductsChanged }) {
     for (let index = 0; index < productsWithCategories.length; index += 1) {
       const product = productsWithCategories[index]
       const existing = existingBySku.get(product.sku.toUpperCase())
+        || existingBySlug.get(product.slug.toLowerCase())
       const alreadyCurrent = existing && [
         'name', 'slug', 'description', 'price', 'imageUrl', 'categoryId',
       ].every((key) => String(existing[key] ?? '') === String(product[key] ?? ''))
@@ -402,7 +406,10 @@ function AdminProductsDrawer({ onClose, onProductsChanged }) {
               {preparedStock.length} separate listings are ready with their own photos and prices. One stock unit means one item, one pair of earrings, or one complete set as shown in its photo.
             </p>
             <p className="prepared-stock-counts">
-              21 necklaces and sets · 22 bracelets and bangles · 21 earring pairs
+              21 chains and sets · 22 bracelets and bangles · 21 earring pairs · 24 individual rings
+            </p>
+            <p className="prepared-stock-counts">
+              The rings are listed individually: 12 at ₹40 and 12 at ₹50.
             </p>
             <p className="prepared-stock-counts">
               14 crochet keychains and mini bag designs are ready separately.

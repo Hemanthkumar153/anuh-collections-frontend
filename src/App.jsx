@@ -58,6 +58,12 @@ function categorySymbol(categoryName = '') {
   return '⌁'
 }
 
+function displayCategoryName(categoryName = '') {
+  return categoryName.toLowerCase().includes('tulip chain')
+    ? 'Chains'
+    : categoryName
+}
+
 async function getCsrfHeader() {
   const response = await fetch('/api/v1/auth/csrf', {
     credentials: 'include',
@@ -818,7 +824,7 @@ function App() {
             key={category.id}
             onClick={() => selectCategory(category.id)}
           >
-            {category.name}
+            {displayCategoryName(category.name)}
           </button>
         ))}
       </nav>
@@ -885,7 +891,7 @@ function App() {
                 onClick={() => setSelectedCategory(category.id)}
               >
                 <span>{categorySymbol(category.name)}</span>
-                {category.name}
+                {displayCategoryName(category.name)}
               </button>
             ))}
           </div>
@@ -897,9 +903,9 @@ function App() {
               <p className="eyebrow">THE ANUH EDIT</p>
               <h2>
                 {selectedCategory
-                  ? categories.find(
-                      (item) => item.id === selectedCategory,
-                    )?.name
+                  ? displayCategoryName(
+                      categories.find((item) => item.id === selectedCategory)?.name,
+                    )
                   : 'A little something lovely'}
               </h2>
               <p className="section-subtitle">
@@ -949,7 +955,7 @@ function App() {
                       ) : (
                         <div className="image-placeholder">
                           <span>{categorySymbol(product.categoryName)}</span>
-                          <small>{product.categoryName}</small>
+                          <small>{displayCategoryName(product.categoryName)}</small>
                         </div>
                       )}
                       <span className="handmade-tag">HANDMADE</span>
@@ -973,7 +979,7 @@ function App() {
                     </div>
 
                     <div className="product-info">
-                      <p className="product-category">{product.categoryName}</p>
+                      <p className="product-category">{displayCategoryName(product.categoryName)}</p>
                       <h3>{product.name}</h3>
                       <p className="product-description">
                         {product.description ||
