@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import preparedStock from './data/preparedStock.json'
+import crochetStock from './data/crochetStock.json'
 import './AdminProductsDrawer.css'
 
 const emptyProduct = {
@@ -250,51 +251,60 @@ function AdminProductsDrawer({ onClose, onProductsChanged }) {
     setMessage('')
     setStockImportResult('')
 
+    const productsWithCategories = preparedProducts.map((product) => {
+      if (product.categoryId) return product
+      const category = categories.find((item) =>
+        item.name?.toLowerCase().includes(product.categoryName.toLowerCase()),
+      )
+      return category ? { ...product, categoryId: Number(category.id) } : product
+    })
     const categoryIds = new Set(categories.map((category) => Number(category.id)))
     const missingCategories = [...new Set(
-      preparedProducts
-        .map((product) => product.categoryId)
-        .filter((categoryId) => !categoryIds.has(categoryId)),
+      productsWithCategories
+        .filter((product) => !categoryIds.has(Number(product.categoryId)))
+        .map((product) => product.categoryName || `category ${product.categoryId}`),
     )]
 
     if (missingCategories.length > 0) {
       setError(
-        'Your shop is missing one or more product categories. Refresh the page and check that Rings, Earrings, Tulip Chains, and Bracelets exist.',
+        `Your shop is missing these categories: ${missingCategories.join(', ')}. Add them in the shop database, then refresh this page.`,
       )
       return
     }
 
-    const existingSkus = new Set(
-      products.map((product) => String(product.sku || '').toUpperCase()),
+    const existingBySku = new Map(
+      products.map((product) => [String(product.sku || '').toUpperCase(), product]),
     )
-    const productsToCreate = preparedProducts.filter(
-      (product) => !existingSkus.has(product.sku.toUpperCase()),
-    )
-
-    if (productsToCreate.length === 0) {
-      setStockImportResult(`All ${batchLabel} are already in the shop.`)
-      return
-    }
 
     const confirmed = window.confirm(
-      `Add ${productsToCreate.length} ${batchLabel} to the shop now? Each listing starts with stock quantity 1. This will create active products in your shop database.`,
+      `Sync ${productsWithCategories.length} ${batchLabel} to the shop? Existing listings with the same SKU will be updated with the prepared details and photo; missing listings will be added.`,
     )
 
     if (!confirmed) return
 
     setImportingStock(true)
     let added = 0
+    let updated = 0
     let failed = 0
     const failures = []
 
-    for (let index = 0; index < productsToCreate.length; index += 1) {
-      const product = productsToCreate[index]
-      setStockImportResult(`Adding product ${index + 1} of ${productsToCreate.length}: ${product.name}`)
+    for (let index = 0; index < productsWithCategories.length; index += 1) {
+      const product = productsWithCategories[index]
+      const existing = existingBySku.get(product.sku.toUpperCase())
+      const alreadyCurrent = existing && [
+        'name', 'slug', 'description', 'price', 'imageUrl', 'categoryId',
+      ].every((key) => String(existing[key] ?? '') === String(product[key] ?? ''))
+      if (alreadyCurrent) continue
+      const method = existing ? 'PUT' : 'POST'
+      const url = existing
+        ? `/api/v1/admin/products/${existing.id}`
+        : '/api/v1/admin/products'
+      setStockImportResult(`Syncing product ${index + 1} of ${productsWithCategories.length}: ${product.name}`)
 
       try {
         const csrfHeader = await getCsrfHeader()
-        const response = await fetch('/api/v1/admin/products', {
-          method: 'POST',
+        const response = await fetch(url, {
+          method,
           credentials: 'include',
           headers: {
             'Content-Type': 'application/json',
@@ -306,7 +316,7 @@ function AdminProductsDrawer({ onClose, onProductsChanged }) {
             slug: product.slug,
             description: product.description,
             price: product.price,
-            stockQuantity: product.stockQuantity,
+            stockQuantity: existing?.stockQuantity ?? product.stockQuantity,
             imageUrl: product.imageUrl,
             categoryId: product.categoryId,
           }),
@@ -325,7 +335,8 @@ function AdminProductsDrawer({ onClose, onProductsChanged }) {
           )
         }
 
-        added += 1
+        if (existing) updated += 1
+        else added += 1
       } catch (requestError) {
         failed += 1
         failures.push(`${product.name}: ${requestError.message || 'Could not add it.'}`)
@@ -336,7 +347,7 @@ function AdminProductsDrawer({ onClose, onProductsChanged }) {
     onProductsChanged()
     setImportingStock(false)
 
-    const summary = `Added ${added} products${failed ? `; ${failed} could not be added` : ''}.`
+    const summary = `Added ${added}, updated ${updated}${failed ? `; ${failed} could not be synced` : ''}.`
     setStockImportResult(
       failures.length ? `${summary} ${failures.slice(0, 3).join(' | ')}` : summary,
     )
@@ -344,6 +355,10 @@ function AdminProductsDrawer({ onClose, onProductsChanged }) {
 
   async function importPreparedStock() {
     await importPreparedBatch(preparedStock, 'prepared products')
+  }
+
+  async function importCrochetStock() {
+    await importPreparedBatch(crochetStock, 'crochet products')
   }
 
   async function import299Chains() {
@@ -389,6 +404,9 @@ function AdminProductsDrawer({ onClose, onProductsChanged }) {
             <p className="prepared-stock-counts">
               21 necklaces and sets · 22 bracelets and bangles · 21 earring pairs
             </p>
+            <p className="prepared-stock-counts">
+              14 crochet keychains and mini bag designs are ready separately.
+            </p>
           </div>
           <div className="prepared-stock-actions">
             <button
@@ -406,6 +424,14 @@ function AdminProductsDrawer({ onClose, onProductsChanged }) {
               disabled={loading || importingStock || categories.length === 0}
             >
               Add ₹299 chains
+            </button>
+            <button
+              className="admin-secondary-button prepared-stock-button"
+              type="button"
+              onClick={importCrochetStock}
+              disabled={loading || importingStock || categories.length === 0}
+            >
+              {importingStock ? 'Syncing crochet products…' : 'Add crochet keychains'}
             </button>
           </div>
           {stockImportResult && (
