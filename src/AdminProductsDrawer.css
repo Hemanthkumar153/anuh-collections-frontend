@@ -108,6 +108,11 @@
   background: #f8f3ed;
 }
 
+.prepared-stock-actions {
+  display: grid;
+  gap: 8px;
+}
+
 .prepared-stock-section h3 {
   margin: 0;
   color: #382f2a;

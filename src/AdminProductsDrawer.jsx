@@ -245,14 +245,14 @@ function AdminProductsDrawer({ onClose, onProductsChanged }) {
     }
   }
 
-  async function importPreparedStock() {
+  async function importPreparedBatch(preparedProducts, batchLabel) {
     setError('')
     setMessage('')
     setStockImportResult('')
 
     const categoryIds = new Set(categories.map((category) => Number(category.id)))
     const missingCategories = [...new Set(
-      preparedStock
+      preparedProducts
         .map((product) => product.categoryId)
         .filter((categoryId) => !categoryIds.has(categoryId)),
     )]
@@ -267,17 +267,17 @@ function AdminProductsDrawer({ onClose, onProductsChanged }) {
     const existingSkus = new Set(
       products.map((product) => String(product.sku || '').toUpperCase()),
     )
-    const productsToCreate = preparedStock.filter(
+    const productsToCreate = preparedProducts.filter(
       (product) => !existingSkus.has(product.sku.toUpperCase()),
     )
 
     if (productsToCreate.length === 0) {
-      setStockImportResult('All prepared products are already in the shop.')
+      setStockImportResult(`All ${batchLabel} are already in the shop.`)
       return
     }
 
     const confirmed = window.confirm(
-      `Add ${productsToCreate.length} separate products to the shop now? Each listing starts with stock quantity 1. This will create active products in your shop database.`,
+      `Add ${productsToCreate.length} ${batchLabel} to the shop now? Each listing starts with stock quantity 1. This will create active products in your shop database.`,
     )
 
     if (!confirmed) return
@@ -314,6 +314,12 @@ function AdminProductsDrawer({ onClose, onProductsChanged }) {
 
         const result = await readResponse(response)
         if (!response.ok) {
+          if (response.status === 403) {
+            throw new Error(
+              'Access denied. Confirm this account is ADMIN in Railway, then sign out and sign in again.',
+            )
+          }
+
           throw new Error(
             result.detail || result.message || `Server returned ${response.status}`,
           )
@@ -334,6 +340,17 @@ function AdminProductsDrawer({ onClose, onProductsChanged }) {
     setStockImportResult(
       failures.length ? `${summary} ${failures.slice(0, 3).join(' | ')}` : summary,
     )
+  }
+
+  async function importPreparedStock() {
+    await importPreparedBatch(preparedStock, 'prepared products')
+  }
+
+  async function import299Chains() {
+    const chainProducts = preparedStock.filter(
+      (product) => product.categoryId === 1 && product.price === 299,
+    )
+    await importPreparedBatch(chainProducts, '₹299 chain listings')
   }
 
   return (
@@ -370,17 +387,27 @@ function AdminProductsDrawer({ onClose, onProductsChanged }) {
               {preparedStock.length} separate listings are ready with their own photos and prices. One stock unit means one item, one pair of earrings, or one complete set as shown in its photo.
             </p>
             <p className="prepared-stock-counts">
-              20 necklaces and sets · 22 bracelets and bangles · 21 earring pairs
+              21 necklaces and sets · 22 bracelets and bangles · 21 earring pairs
             </p>
           </div>
-          <button
-            className="admin-primary-button prepared-stock-button"
-            type="button"
-            onClick={importPreparedStock}
-            disabled={loading || importingStock || categories.length === 0}
-          >
-            {importingStock ? 'Adding prepared stock…' : 'Add prepared stock'}
-          </button>
+          <div className="prepared-stock-actions">
+            <button
+              className="admin-primary-button prepared-stock-button"
+              type="button"
+              onClick={importPreparedStock}
+              disabled={loading || importingStock || categories.length === 0}
+            >
+              {importingStock ? 'Adding prepared stock…' : 'Add prepared stock'}
+            </button>
+            <button
+              className="admin-secondary-button prepared-stock-button"
+              type="button"
+              onClick={import299Chains}
+              disabled={loading || importingStock || categories.length === 0}
+            >
+              Add ₹299 chains
+            </button>
+          </div>
           {stockImportResult && (
             <p className="admin-products-alert success" role="status">
               {stockImportResult}
