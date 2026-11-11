@@ -398,58 +398,31 @@ function AdminProductsDrawer({ onClose, onProductsChanged }) {
           </button>
         </header>
 
-        <section className="prepared-stock-section">
-          <div>
-            <p className="admin-products-eyebrow">YOUR PHOTOS, ONE LISTING PER DESIGN</p>
-            <h3>Prepared stock</h3>
-            <p className="prepared-stock-copy">
-              {preparedStock.length} separate listings are ready with their own photos and prices. One stock unit means one item, one pair of earrings, or one complete set as shown in its photo.
-            </p>
-            <p className="prepared-stock-counts">
-              21 chains and sets · 22 bracelets and bangles · 21 earring pairs · 24 individual rings
-            </p>
-            <p className="prepared-stock-counts">
-              The rings are listed individually: 12 at ₹40 and 12 at ₹50.
-            </p>
-            <p className="prepared-stock-counts">
-              14 crochet keychains and mini bag designs are ready separately.
-            </p>
-          </div>
-          <div className="prepared-stock-actions">
+        {stockImportResult && (
+          <p className="admin-products-alert success" role="status">
+            {stockImportResult}
+          </p>
+        )}
+
+        {preparedStock.length > 0 && (
+          <section className="prepared-stock-section">
+            <div>
+              <p className="admin-products-eyebrow">READY TO LIST</p>
+              <h3>₹50 earrings</h3>
+              <p className="prepared-stock-copy">
+                Seven pairs, each with a product photo and a worn photo. Each listing starts with one pair in stock.
+              </p>
+            </div>
             <button
               className="admin-primary-button prepared-stock-button"
               type="button"
+              disabled={importingStock}
               onClick={importPreparedStock}
-              disabled={loading || importingStock || categories.length === 0}
             >
-              {importingStock ? 'Adding prepared stock…' : 'Add prepared stock'}
+              {importingStock ? 'Adding earrings…' : 'Add 7 earring designs'}
             </button>
-            <button
-              className="admin-secondary-button prepared-stock-button"
-              type="button"
-              onClick={import299Chains}
-              disabled={loading || importingStock || categories.length === 0}
-            >
-              Add ₹299 chains
-            </button>
-            <button
-              className="admin-secondary-button prepared-stock-button"
-              type="button"
-              onClick={importCrochetStock}
-              disabled={loading || importingStock || categories.length === 0}
-            >
-              {importingStock ? 'Syncing crochet products…' : 'Add crochet keychains'}
-            </button>
-          </div>
-          {stockImportResult && (
-            <p className="admin-products-alert success" role="status">
-              {stockImportResult}
-            </p>
-          )}
-          <p className="prepared-stock-note">
-            The ring tray photos from earlier messages aren’t available in the project files, so those rings are not included in this batch.
-          </p>
-        </section>
+          </section>
+        )}
 
         <section className="admin-product-form-section">
           <h3>{editingId ? 'Edit product' : 'Add a product'}</h3>

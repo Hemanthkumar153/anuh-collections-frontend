@@ -6,6 +6,7 @@ import OrderHistoryDrawer from './OrderHistoryDrawer'
 import WishlistDrawer from './WishlistDrawer'
 import AdminProductsDrawer from './AdminProductsDrawer'
 import AdminOrdersDrawer from './AdminOrdersDrawer'
+import earringTryOnPhotos from './data/earringTryOnPhotos'
 import './App.css'
 
 const GUEST_BAG_KEY = 'anuh-guest-bag'
@@ -62,6 +63,38 @@ function displayCategoryName(categoryName = '') {
   return categoryName.toLowerCase().includes('tulip chain')
     ? 'Chains'
     : categoryName
+}
+
+function ProductPhoto({ product }) {
+  const [showWornPhoto, setShowWornPhoto] = useState(false)
+  const wornPhoto = earringTryOnPhotos[product.slug]
+
+  return (
+    <>
+      {product.imageUrl ? (
+        <img
+          src={showWornPhoto && wornPhoto ? wornPhoto : product.imageUrl}
+          alt={showWornPhoto ? `${product.name}, shown worn` : product.name}
+        />
+      ) : (
+        <div className="image-placeholder">
+          <span>{categorySymbol(product.categoryName)}</span>
+          <small>{displayCategoryName(product.categoryName)}</small>
+        </div>
+      )}
+      <span className="handmade-tag">HANDMADE</span>
+      {wornPhoto && (
+        <button
+          className="try-on-photo-toggle"
+          type="button"
+          aria-label={showWornPhoto ? 'Show product photo' : 'See how it looks worn'}
+          onClick={() => setShowWornPhoto((showing) => !showing)}
+        >
+          {showWornPhoto ? 'Product photo' : 'See it worn'}
+        </button>
+      )}
+    </>
+  )
 }
 
 async function getCsrfHeader() {
@@ -950,15 +983,7 @@ function App() {
                 return (
                   <article className="product-card" key={product.id}>
                     <div className="product-image">
-                      {product.imageUrl ? (
-                        <img src={product.imageUrl} alt={product.name} />
-                      ) : (
-                        <div className="image-placeholder">
-                          <span>{categorySymbol(product.categoryName)}</span>
-                          <small>{displayCategoryName(product.categoryName)}</small>
-                        </div>
-                      )}
-                      <span className="handmade-tag">HANDMADE</span>
+                      <ProductPhoto product={product} />
                       <button
                         className={
                           isSaved
