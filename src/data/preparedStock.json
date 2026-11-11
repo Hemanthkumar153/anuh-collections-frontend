@@ -30,9 +30,9 @@
     "categoryName": "Earrings"
   },
   {
-    "sku": "ER-50-BLACK-CURL-DROP",
+    "sku": "ER-50-BLACK-CURL-DROP-02",
     "name": "Black Curl Crystal Drop Earrings",
-    "slug": "black-curl-crystal-drop-earrings",
+    "slug": "black-curl-crystal-drop-earrings-02",
     "description": "Silver-tone scroll earrings with dark butterfly details and a bright crystal drop. Sold as one pair.",
     "price": 50,
     "stockQuantity": 1,
@@ -40,9 +40,9 @@
     "categoryName": "Earrings"
   },
   {
-    "sku": "ER-50-WHITE-BOW-STUDS",
+    "sku": "ER-50-WHITE-BOW-STUDS-02",
     "name": "White Bow Stud Earrings",
-    "slug": "white-bow-stud-earrings",
+    "slug": "white-bow-stud-earrings-02",
     "description": "Sweet white enamel bow studs with polished silver-tone edges. Sold as one pair.",
     "price": 50,
     "stockQuantity": 1,
