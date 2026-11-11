@@ -11,6 +11,7 @@ function AuthDialog({ onClose, onAuthenticated }) {
   const [message, setMessage] = useState('')
   const [error, setError] = useState('')
   const [submitting, setSubmitting] = useState(false)
+  const [showPassword, setShowPassword] = useState(false)
 
   function updateField(event) {
     setForm({ ...form, [event.target.name]: event.target.value })
@@ -134,6 +135,7 @@ function AuthDialog({ onClose, onAuthenticated }) {
             className={mode === 'login' ? 'selected' : ''}
             onClick={() => {
               setMode('login')
+              setShowPassword(false)
               setError('')
               setMessage('')
             }}
@@ -145,6 +147,7 @@ function AuthDialog({ onClose, onAuthenticated }) {
             className={mode === 'register' ? 'selected' : ''}
             onClick={() => {
               setMode('register')
+              setShowPassword(false)
               setError('')
               setMessage('')
             }}
@@ -184,18 +187,41 @@ function AuthDialog({ onClose, onAuthenticated }) {
 
           <label>
             Password
-            <input
-              name="password"
-              type="password"
-              autoComplete={
-                mode === 'login' ? 'current-password' : 'new-password'
-              }
-              minLength={mode === 'register' ? 12 : undefined}
-              maxLength="72"
-              required
-              value={form.password}
-              onChange={updateField}
-            />
+            <span className="auth-password-field">
+              <input
+                name="password"
+                type={showPassword ? 'text' : 'password'}
+                autoComplete={
+                  mode === 'login' ? 'current-password' : 'new-password'
+                }
+                minLength={mode === 'register' ? 12 : undefined}
+                maxLength="72"
+                required
+                value={form.password}
+                onChange={updateField}
+              />
+              <button
+                className="auth-password-toggle"
+                type="button"
+                aria-label={showPassword ? 'Hide password' : 'Show password'}
+                aria-pressed={showPassword}
+                onClick={() => setShowPassword((visible) => !visible)}
+              >
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.7"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6-10-6-10-6Z" />
+                  <circle cx="12" cy="12" r="2.6" />
+                  {showPassword && <path d="m4 4 16 16" />}
+                </svg>
+              </button>
+            </span>
             {mode === 'register' && (
               <small>Use at least 12 characters.</small>
             )}
